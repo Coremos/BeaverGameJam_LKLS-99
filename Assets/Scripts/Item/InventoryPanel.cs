@@ -17,7 +17,7 @@ public class InventoryPanel : MonoBehaviour
         {
             var tempItemData = new ItemData();
             tempItemData.Index = i;
-            tempItemData.ItemName = $"temp_{i}";
+            tempItemData.Name = $"temp_{i}";
             tempItemData.Count = 1;
 
             tempDataList.Add(tempItemData);
