@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,24 +13,14 @@ public class InventoryPanel : MonoBehaviour
 
     private void Awake()
     {
-        var tempDataList = new List<ItemData>();
-        for (int i = 1; i < 9; i++)
-        {
-            var tempItemData = new ItemData();
-            tempItemData.Index = i;
-            tempItemData.Name = $"temp_{i}";
-            tempItemData.Count = 1;
-
-            tempDataList.Add(tempItemData);
-        }
-
-        SetInventoryPanel(tempDataList);
+        SetInventoryPanel(GameDataManager.Instance.GlobalInventory.Items);
     }
 
     public void SetInventoryPanel(List<ItemData> itemDataList)
     {
         InitItemComponent(itemDataList);
     }
+    
 
     private void InitItemComponent(List<ItemData> itemDataList)
     {
