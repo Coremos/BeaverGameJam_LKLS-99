@@ -7,9 +7,14 @@ public class ItemBox : MonoBehaviour
 {
     public Transform content;
     public ItemComponent.ItemType ChangedType;
+    public int MaxCount = 1;
 
     public bool AddItem(ItemComponent itemComponent)
     {
+        if (GetItemComponentList().Count >= MaxCount)
+        {
+            return false;
+        }
         if (ChangeItemType(itemComponent) == false)
         {
             return false;

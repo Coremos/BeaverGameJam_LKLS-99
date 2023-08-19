@@ -307,6 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 950075357}
   ChangedType: 2
+  MaxCount: 1
   ItemComponent: {fileID: 5214845888089390025, guid: 84cabe3e559d8da4c8264e4a856d13bd, type: 3}
   OutputScrollRect: {fileID: 1087561504}
   ConvertButton: {fileID: 1678468502}
@@ -1602,6 +1603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 1238402731}
   ChangedType: 4
+  MaxCount: 9
 --- !u!114 &489566243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,6 +1699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 2072372729}
   ChangedType: 2
+  MaxCount: 1
   ItemComponent: {fileID: 5214845888089390025, guid: 84cabe3e559d8da4c8264e4a856d13bd, type: 3}
   OutputScrollRect: {fileID: 683333215}
   ConvertButton: {fileID: 73033652}
@@ -5781,6 +5784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 1236787979}
   ChangedType: 2
+  MaxCount: 1
   ItemComponent: {fileID: 5214845888089390025, guid: 84cabe3e559d8da4c8264e4a856d13bd, type: 3}
   OutputScrollRect: {fileID: 1429228410}
   ConvertButton: {fileID: 364003096}
