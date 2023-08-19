@@ -3,7 +3,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private Image image;
+    [SerializeField] private Image front;
+    [SerializeField] private Image back;
     private float setupTime;
     private float currentTime;
     private float divider;
@@ -18,7 +19,8 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         currentTime -= Time.deltaTime;
-        image.fillAmount = currentTime * divider;
+        front.fillAmount = currentTime * divider;
+        back.color = Color.Lerp(Color.red, Color.green, front.fillAmount);
         if (currentTime > 0.0f) return;
         OnEndTimer();
     }

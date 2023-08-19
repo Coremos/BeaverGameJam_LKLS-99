@@ -13,10 +13,12 @@ public class PlayerInventoryUI : MonoBehaviour
             if (index >= inventory.Items.Count)
             {
                 images[index].sprite = null;
+                images[index].color = Color.clear;
                 continue;
             }
             var item = inventory.Items[index];
             images[index].sprite = item.Sprite;
+            images[index].color = Color.white;
         }
     }
 }
