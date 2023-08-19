@@ -16,3 +16,4 @@ public class EndingScene : MonoBehaviour
         GameSceneManager.Instance.LoadScene(sceneType);
 
     }
+}
