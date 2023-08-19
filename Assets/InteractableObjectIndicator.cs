@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InteractableObjectIndicator : MonoBehaviour, IPointerClickHandler
+public class InteractableObjectIndicator : MonoBehaviour
 {
     public IInteractableObject InteractableObject;
 
@@ -10,7 +10,7 @@ public class InteractableObjectIndicator : MonoBehaviour, IPointerClickHandler
         gameObject.SetActive(value);
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnClick()
     {
         InteractableObject?.Interact();
     }
