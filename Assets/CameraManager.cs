@@ -2,21 +2,32 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    [SerializeField] private float speed;
     [SerializeField] private Vector2 minPosition;
     [SerializeField] private Vector2 maxPosition;
-    private Vector3 bufferVector;
+    [SerializeField] private Transform target;
+    private Vector3 tempVector;
 
     private void FixedUpdate()
     {
-        bufferVector = transform.position;
-        if (bufferVector.x < minPosition.x)
+        tempVector = Vector2.Lerp(transform.position, target.position, speed * Time.deltaTime);
+        if (tempVector.x < minPosition.x)
         {
-            bufferVector.x = minPosition.x;
+            tempVector.x = minPosition.x;
         }
-        if (bufferVector.y < minPosition.y)
+        else if (tempVector.x > maxPosition.x)
         {
-            bufferVector.y = minPosition.y;
+            tempVector.x = maxPosition.x;
         }
-
+        if (tempVector.y < minPosition.y)
+        {
+            tempVector.y = minPosition.y;
+        }
+        else if (tempVector.y > maxPosition.y)
+        {
+            tempVector.y = maxPosition.y;
+        }
+        tempVector.z = -10.0f;
+        transform.position = tempVector;
     }
 }
