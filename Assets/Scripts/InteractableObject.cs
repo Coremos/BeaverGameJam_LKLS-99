@@ -4,7 +4,7 @@ public class InteractableObject : MonoBehaviour, IInteractableObject
 {
     public void Interact()
     {
-
+        Debug.Log(transform.name + "Interact!");
     }
 }
 

@@ -3,12 +3,16 @@ using UnityEngine;
 public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] private float range;
+    private RaycastHit2D[] hitBuffer = new RaycastHit2D[10];
 
     public void Interact(Vector3 direction)
     {
-        var hit = Physics2D.Linecast(transform.position, transform.position + direction * range);
-        if (hit.collider == null) return;
-        if (!hit.transform.TryGetComponent<IInteractableObject>(out var interactableObject)) return;
-        interactableObject.Interact();
+        int count = Physics2D.LinecastNonAlloc(transform.position, transform.position + direction * range, hitBuffer);
+        for (int index = 0; index < count; index++)
+        {
+            if (hitBuffer[index].transform == transform) continue;
+            if (!hitBuffer[index].collider.TryGetComponent<IInteractableObject>(out var interactable)) continue;
+            interactable.Interact();
+        }
     }
 }
