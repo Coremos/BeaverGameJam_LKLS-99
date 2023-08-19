@@ -60,6 +60,7 @@ public class InventoryPanel : MonoBehaviour
             _inventoryItemComponentList[i].ItemData = itemDataList[i];
             _inventoryItemComponentList[i].NowItemType = ItemComponent.ItemType.Inventory;
             _inventoryItemComponentList[i].gameObject.SetActive(true);
+            _inventoryItemComponentList[i].ItemImage.sprite = itemDataList[i].Sprite;
         }
     }
 }

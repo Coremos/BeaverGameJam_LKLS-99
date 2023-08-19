@@ -10,12 +10,14 @@ public class SubmitComponent : ItemBox
     {
         StringBuilder stringBuilder = new StringBuilder();
 
-        var result = SubmitManager.Instance.Submit(GetItemComponentList());
+        var result = SubmitManager.Instance.GetSubmitResult(GetItemComponentList());
         for (int i = 0; i < result.Count; i++)
         {
             stringBuilder.Append($"[{i}] {result[i]} / ");
         }
 
         Debug.Log(stringBuilder.ToString());
+
+        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Ending);
     }
 }
