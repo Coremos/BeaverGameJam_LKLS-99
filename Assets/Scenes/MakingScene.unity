@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087270caf37841344a814219e2cc6330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 0
-  ConverterName: "\uBAA8\uB8E8"
+  Index: 7
+  ConverterName: "\uB9F7\uB3CC"
 --- !u!114 &23322486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087270caf37841344a814219e2cc6330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 0
+  Index: 16
   ConverterName: "\uBAA8\uB8E8"
 --- !u!114 &492633052
 MonoBehaviour:
@@ -4427,6 +4427,7 @@ GameObject:
   - component: {fileID: 1359676674}
   - component: {fileID: 1359676676}
   - component: {fileID: 1359676675}
+  - component: {fileID: 1359676677}
   m_Layer: 5
   m_Name: Bottom
   m_TagString: Untagged
@@ -4496,6 +4497,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359676673}
   m_CullTransparentMesh: 1
+--- !u!114 &1359676677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359676673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f53f6a9b87100b46b43aadac9f51be9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConverterDataList:
+  - {fileID: 1820343155}
+  - {fileID: 492633051}
+  - {fileID: 23322485}
 --- !u!1 &1427023927
 GameObject:
   m_ObjectHideFlags: 0
@@ -5818,8 +5835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087270caf37841344a814219e2cc6330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Index: 0
-  ConverterName: "\uBAA8\uB8E8"
+  Index: 24
+  ConverterName: "\uC808\uAD6C\uD1B5"
 --- !u!1 &1827236677
 GameObject:
   m_ObjectHideFlags: 0

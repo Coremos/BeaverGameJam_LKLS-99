@@ -8,13 +8,20 @@ using UnityEngine;
 public class ItemManager : Singleton<ItemManager>
 {
     public Dictionary <int, ItemData> ItemTabeDataDic =  new Dictionary <int, ItemData> ();
-    
+    public Dictionary <string, bool> ConverterDic = new Dictionary <string, bool> ();
+
     private void Awake()
     {
         DontDestroyOnLoad(this);
     }
 
     public void Init()
+    {
+        ReadTableData();
+        SetConverter();
+    }
+
+    private void ReadTableData()
     {
         var readResult = CSVReader.Read("CSV/ItemTable");
 
@@ -57,7 +64,22 @@ public class ItemManager : Singleton<ItemManager>
         {
             UnityEngine.Debug.LogError(e.Message);
         }
+
     }
 
-    
+    private void SetConverter()
+    {
+        foreach (var data in ItemTabeDataDic)
+        {
+            if (data.Value.Type == ItemData.ItemType.Converter)
+            {
+                if (ConverterDic.ContainsKey(data.Value.Name))
+                {
+                    continue;
+                }
+
+                ConverterDic.Add(data.Value.Name, false);
+            }
+        }
+    }
 }
