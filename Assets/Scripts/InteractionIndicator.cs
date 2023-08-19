@@ -18,7 +18,7 @@ public class InteractionIndicator : MonoBehaviour
     private void Update()
     {
         if (target == null) return;
-        indicator.transform.position = Vector3.Lerp(indicator.transform.position, target.position, 10.0f * Time.deltaTime);
+        indicator.transform.position = Vector3.Lerp(indicator.transform.position, Camera.main.WorldToScreenPoint(target.position), 10.0f * Time.deltaTime);
     }
 
     private void FixedUpdate()
@@ -46,7 +46,7 @@ public class InteractionIndicator : MonoBehaviour
         if (!isActivated)
         {
             isActivated = true;
-            indicator.transform.position = target.position;
+            indicator.transform.position = Camera.main.WorldToScreenPoint(target.position);
         }
         target.TryGetComponent(out indicator.InteractableObject);
         indicator.SetActive(true);
