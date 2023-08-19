@@ -8,7 +8,7 @@ public class InteractionIndicator : MonoBehaviour
     private bool isActivated;
 
     [SerializeField] private float interactionRange;
-    [SerializeField] private GameObject indicator;
+    [SerializeField] private InteractableObjectIndicator indicator;
 
     private void Awake()
     {
@@ -48,6 +48,7 @@ public class InteractionIndicator : MonoBehaviour
             isActivated = true;
             indicator.transform.position = target.position;
         }
+        target.TryGetComponent(out indicator.InteractableObject);
         indicator.SetActive(true);
     }
 
