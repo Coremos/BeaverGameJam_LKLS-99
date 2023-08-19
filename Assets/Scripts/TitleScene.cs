@@ -8,6 +8,7 @@ public class TitleScene : MonoBehaviour
     {
         GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Check);
         ItemManager.Instance.Init();
+        SubmitManager.Instance.Init();
         spriteBinder.Bind(ItemManager.Instance.ItemTabeDataDic);
     }
 }

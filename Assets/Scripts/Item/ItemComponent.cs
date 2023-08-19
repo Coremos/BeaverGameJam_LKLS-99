@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ItemComponent : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class ItemComponent : MonoBehaviour
         None = 0,
         Inventory,
         ConverterInput,
-        ConverterOutput
+        ConverterOutput,
+        Submit
     }
 
     public Image ItemImage;
@@ -20,11 +22,15 @@ public class ItemComponent : MonoBehaviour
 
     public bool isMoveableType()
     {
-        if (NowItemType == ItemType.Inventory || NowItemType == ItemType.ConverterOutput)
+        switch (NowItemType)
         {
-            return true;
+            case ItemType.Inventory:
+            case ItemType.ConverterOutput:
+            //case ItemType.Submit:
+                return true;
+            default:
+                return false;
         }
-
-        return false;
     }
+
 }

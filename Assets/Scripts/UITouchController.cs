@@ -15,6 +15,7 @@ public class UITouchController : MonoBehaviour
     private bool _isDrag = false;
     private ItemData _itemData = null;
     private ItemComponent _targetComponent = null;
+    private Transform _defaultParentTransform = null;
 
 
     private void Awake()
@@ -66,8 +67,9 @@ public class UITouchController : MonoBehaviour
             }
 
             _targetComponent = component;
+            _defaultParentTransform = component.transform.parent;
+            _targetComponent.transform.parent = MoveTargetObject.transform;
             _isDrag = true;
-            MoveTargetObject.SetActive(true);
             return;
         }
     }
@@ -84,8 +86,7 @@ public class UITouchController : MonoBehaviour
             return;
         }
 
-
-        MoveTargetObject.transform.position = PointerEventData.position;
+        _targetComponent.transform.position = PointerEventData.position;
     }
 
     private void OnPointerUp(List<RaycastResult> raycastResults)
@@ -100,17 +101,31 @@ public class UITouchController : MonoBehaviour
             return;
         }
 
+        var isMoved = false;
         for (int i = 0; i < raycastResults.Count; i++)
         {
-            var converter = raycastResults[i].gameObject.GetComponent<ItemConverterComponent>();
-            if (converter != null)
+            var itemBox = raycastResults[i].gameObject.GetComponent<ItemBox>();
+            if (itemBox != null)
             {
-                converter.AddItem(_targetComponent.ItemData);
+                bool isVaild = itemBox.AddItem(_targetComponent);
+                if (isVaild == false)
+                {
+                    continue;
+                }
+
+                _targetComponent.transform.parent = itemBox.content;
+                isMoved = true;
+                break;
             }
+        }
+
+        if (isMoved == false)
+        {
+            _targetComponent.transform.parent = _defaultParentTransform;
         }
 
         _targetComponent = null;
         _isDrag = false;
-        MoveTargetObject.SetActive(false);
+        _defaultParentTransform = null;
     }
 }

@@ -13,7 +13,7 @@ public class InventoryPanel : MonoBehaviour
     private void Awake()
     {
         var tempDataList = new List<ItemData>();
-        for (int i = 0; i < 4; i++)
+        for (int i = 1; i < 9; i++)
         {
             var tempItemData = new ItemData();
             tempItemData.Index = i;
@@ -60,8 +60,6 @@ public class InventoryPanel : MonoBehaviour
             _inventoryItemComponentList[i].ItemData = itemDataList[i];
             _inventoryItemComponentList[i].NowItemType = ItemComponent.ItemType.Inventory;
             _inventoryItemComponentList[i].gameObject.SetActive(true);
-
-
         }
     }
 }
