@@ -15,5 +15,5 @@ public enum LocationType
 public class LocationPoint : MonoBehaviour
 {
     public LocationType LocationType;
-    public string ItemName;
+    public int ItemIndex;
 }

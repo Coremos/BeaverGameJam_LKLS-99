@@ -30,7 +30,7 @@ public class ItemManager : Singleton<ItemManager>
             {
                 var newItemData = new ItemData();
                 newItemData.Index = (int)data["Index"];
-                newItemData.Location = (string)data["Location"];
+                newItemData.Location = ((string)data["Location"]).ToLocationType();
                 if (Enum.TryParse((string)data["Type"], out newItemData.Type) == false)
                 {
                     newItemData.Type = ItemData.ItemType.None;

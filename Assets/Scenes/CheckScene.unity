@@ -1036,7 +1036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocationType: 0
-  ItemName: 
+  ItemIndex: 2
 --- !u!1 &373165810
 GameObject:
   m_ObjectHideFlags: 0
@@ -2270,7 +2270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocationType: 0
-  ItemName: "\uC6A9\uC554"
+  ItemIndex: 1
 --- !u!1 &944578196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,7 +2780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LocationType: 0
-  ItemName: 
+  ItemIndex: 3
 --- !u!1 &1094110641
 GameObject:
   m_ObjectHideFlags: 0

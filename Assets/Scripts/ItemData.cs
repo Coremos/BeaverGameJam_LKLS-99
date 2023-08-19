@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemData
@@ -13,11 +11,12 @@ public class ItemData
 
     public int Index;
     public string Name;
-    public ItemType Type; 
-    public string Location;
+    public ItemType Type;
+    public LocationType Location;
     public string Description;
     public string Answer;
     public bool IsAnswer;
     public bool NeedConvert;
     public int Count;
+    public Sprite Sprite;
 }
