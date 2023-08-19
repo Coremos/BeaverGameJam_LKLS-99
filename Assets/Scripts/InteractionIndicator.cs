@@ -29,6 +29,7 @@ public class InteractionIndicator : MonoBehaviour
         {
             indicator.SetActive(false);
             isActivated = false;
+            indicator.InteractableObject = null;
             return;
         }
         if (count > raycastBufferCount)
@@ -41,6 +42,7 @@ public class InteractionIndicator : MonoBehaviour
         {
             indicator.SetActive(false);
             isActivated = false;
+            indicator.InteractableObject = null;
             return;
         }
         if (!isActivated)

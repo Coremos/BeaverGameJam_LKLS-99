@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class InteractableObjectIndicator : MonoBehaviour
 {
@@ -13,5 +12,6 @@ public class InteractableObjectIndicator : MonoBehaviour
     public void OnClick()
     {
         InteractableObject?.Interact();
+        InteractableObject = null;
     }
 }
