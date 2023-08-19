@@ -1,11 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public Dictionary <int, ItemData> ItemDatadic =  new Dictionary <int, ItemData> ();
+    public Dictionary <int, ItemData> ItemTabeDataDic =  new Dictionary <int, ItemData> ();
     
     private void Awake()
     {
@@ -18,13 +20,44 @@ public class ItemManager : Singleton<ItemManager>
 
         if (readResult == null)
         {
-            Debug.LogError("CSV Result is Null");
+            UnityEngine.Debug.LogError("CSV Result is Null");
             return;
         }
 
-        foreach (var data in readResult)
+        try
         {
-            Debug.Log($"Index: {data["Index"]}");
+            foreach (var data in readResult)
+            {
+                var newItemData = new ItemData();
+                newItemData.Index = (int)data["Index"];
+                newItemData.Location = (string)data["Location"];
+                if (Enum.TryParse((string)data["Type"], out newItemData.Type) == false)
+                {
+                    newItemData.Type = ItemData.ItemType.None;
+                }
+                newItemData.Name = (string)data["Name"];
+                if (Boolean.TryParse((string)data["IsAnswer"], out newItemData.IsAnswer) == false)
+                {
+                    newItemData.IsAnswer = false;
+                }
+                if (Boolean.TryParse((string)data["NeedConvert"], out newItemData.NeedConvert) == false)
+                {
+                    newItemData.NeedConvert = false;
+                }
+                newItemData.Answer = (string)data["Answer"];
+                newItemData.Description = (string)data["Description"];
+
+                if (ItemTabeDataDic.ContainsKey(newItemData.Index) == false)
+                {
+                    ItemTabeDataDic.Add(newItemData.Index, newItemData);
+                }
+            }
+        }
+        catch (System.Exception e)
+        {
+            UnityEngine.Debug.LogError(e.Message);
         }
     }
+
+    
 }
