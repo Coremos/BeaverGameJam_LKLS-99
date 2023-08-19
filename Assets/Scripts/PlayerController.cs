@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour, IMovementController
     [SerializeField] private float dashPower;
     [SerializeField] private float speed;
     [SerializeField] private float dashCooldown;
+    //[SerializeField] private 
 
     private void Awake()
     {

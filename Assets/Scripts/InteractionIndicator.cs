@@ -58,6 +58,7 @@ public class InteractionIndicator : MonoBehaviour
         for (int index = 0; index < count; index++)
         {
             if (raycastBuffer[index].collider == null) continue;
+            if (!raycastBuffer[index].transform.TryGetComponent(out IInteractableObject interactable)) continue;
             if (raycastBuffer[index].transform == transform) continue;
             var difference = raycastBuffer[index].transform.position - transform.position;
             var distance = difference.x * difference.x + difference.y * difference.y;
