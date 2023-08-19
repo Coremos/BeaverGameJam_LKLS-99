@@ -34,7 +34,12 @@ public class PrevPanelComponent : MonoBehaviour
                 _prevItemComponentList.Add(compo);
             }
 
-            //_prevItemComponentList[i].ItemImage = 
+
+            if (ItemManager.Instance.ItemTabeDataDic.ContainsKey(prevIndexList[i]))
+            {
+                var sprite = ItemManager.Instance.ItemTabeDataDic[prevIndexList[i]].Sprite;
+                _prevItemComponentList[i].ItemImage.sprite = sprite;
+            }
             _prevItemComponentList[i].gameObject.SetActive(true);
 
             activeCount++;
