@@ -9,7 +9,7 @@ public class ItemSpriteBinder : MonoBehaviour
     {
         for (int index = 0; index < sprites.Length; index++)
         {
-            itemTableDataDic[index].Sprite = sprites[index];
+            itemTableDataDic[index + 1].Sprite = sprites[index];
         }
     }
 }

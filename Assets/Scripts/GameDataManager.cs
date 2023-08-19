@@ -1,7 +1,7 @@
 public class GameDataManager : Singleton<GameDataManager>
 {
-    public IInventory PlayerInventory;
-    public IInventory GlobalInventory;
+    public PlayerInventory PlayerInventory;
+    public GlobalInventory GlobalInventory;
 
     public GameDataManager()
     {

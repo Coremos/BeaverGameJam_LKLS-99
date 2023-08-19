@@ -8,7 +8,7 @@ public class PlayerInventoryUI : MonoBehaviour
     private void FixedUpdate()
     {
         var inventory = GameDataManager.Instance.PlayerInventory;
-        for (int index = 0; index < inventory.MaxCount; index++)
+        for (int index = 0; index < inventory.Items.Count; index++)
         {
             var item = inventory.Items[index];
             images[index].sprite = item.Sprite;
