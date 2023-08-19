@@ -50,13 +50,13 @@ public class SubmitManager : Singleton<SubmitManager>
             var tableData = ItemManager.Instance.ItemTabeDataDic[submitItemIndex];
             if (tableData.NeedConvert)
             {
-                if (inputComponentList[i].ItemData.IsConverted == false)
+                if (inputComponentList[i].IsConverted == false)
                 {
                     result.Add(SubmitResultType.Fail);
                     continue;
                 }
 
-                if (string.Compare(inputComponentList[i].ItemData.ConverterName, tableData.Answer) != 0)
+                if (string.Compare(inputComponentList[i].ConverterName, tableData.Answer) != 0)
                 {
                     result.Add(SubmitResultType.Fail);
                     continue;

@@ -20,7 +20,4 @@ public class ItemData
     public bool NeedConvert;
     public int Count;
     public Sprite Sprite;
-
-    public bool IsConverted { get; set; } = false;
-    public string ConverterName = string.Empty;
 }

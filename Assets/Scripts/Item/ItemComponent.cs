@@ -20,6 +20,9 @@ public class ItemComponent : MonoBehaviour
     public ItemData ItemData { get; set; }
     public ItemType NowItemType { get; set; }
 
+    public bool IsConverted { get; set; } = false;
+    public string ConverterName = "";
+
     public bool isMoveableType()
     {
         switch (NowItemType)

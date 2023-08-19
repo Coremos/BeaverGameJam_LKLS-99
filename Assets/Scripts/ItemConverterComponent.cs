@@ -57,13 +57,13 @@ public class ItemConverterComponent : ItemBox
                 continue;
             }
 
-            if (compo.ItemData.IsConverted)
+            if (compo.IsConverted)
             {
                 continue;
             }
 
-            compo.ItemData.IsConverted = true;
-            compo.ItemData.ConverterName = _itemConverterData.ConverterName;
+            compo.IsConverted = true;
+            compo.ConverterName = _itemConverterData.ConverterName;
             compo.NowItemType = ItemComponent.ItemType.ConverterOutput;
 
             compo.transform.parent = OutputScrollRect.content;
