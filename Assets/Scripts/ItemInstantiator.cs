@@ -29,7 +29,7 @@ public class ItemInstantiator : MonoBehaviour
     {
         foreach (var locationPoint in locationPoints)
         {
-            var itemObject = Instantiate(itemPrefab);
+            var itemObject = Instantiate(itemPrefab, locationPoint.transform.position, Quaternion.identity, itemRoot);
             itemObject.Item = ItemManager.Instance.ItemTabeDataDic[locationPoint.ItemIndex];
         }
     }
