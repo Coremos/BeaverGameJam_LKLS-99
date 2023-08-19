@@ -47,10 +47,11 @@ public class InventoryPanel : MonoBehaviour
                 _inventoryItemComponentList.Add(compo);
             }
 
+            var isItem = (itemDataList[i].Type == ItemData.ItemType.Item);
             _inventoryItemComponentList[i].ItemCountText.text = itemDataList[i].Count.ToString();
             _inventoryItemComponentList[i].ItemData = itemDataList[i];
             _inventoryItemComponentList[i].NowItemType = ItemComponent.ItemType.Inventory;
-            _inventoryItemComponentList[i].gameObject.SetActive(true);
+            _inventoryItemComponentList[i].gameObject.SetActive(isItem);
             _inventoryItemComponentList[i].ItemImage.sprite = itemDataList[i].Sprite;
         }
     }
