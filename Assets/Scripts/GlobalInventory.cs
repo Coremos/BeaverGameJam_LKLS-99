@@ -2,22 +2,22 @@ using System.Collections.Generic;
 
 public class GlobalInventory : IInventory
 {
-    public List<IItem> Items { get; private set; }
+    public List<ItemData> Items { get; private set; }
     public int MaxCount => int.MaxValue;
 
     public GlobalInventory()
     {
-        Items = new List<IItem>();
+        Items = new List<ItemData>();
     }
 
-    public bool TryAddItem(IItem item)
+    public bool TryAddItem(ItemData item)
     {
         if (Items.Count >= MaxCount) return false;
         Items.Add(item);
         return true;
     }
-    
-    public void RemoveItem(IItem item)
+
+    public void RemoveItem(ItemData item)
     {
         Items.Remove(item);
     }
@@ -41,22 +41,22 @@ public class GlobalInventory : IInventory
 
 public class PlayerInventory : IInventory
 {
-    public List<IItem> Items { get; set; }
+    public List<ItemData> Items { get; set; }
     public int MaxCount => 4;
 
     public PlayerInventory()
     {
-        Items = new List<IItem>();
+        Items = new List<ItemData>();
     }
 
-    public bool TryAddItem(IItem item)
+    public bool TryAddItem(ItemData item)
     {
         if (Items.Count >= MaxCount) return false;
         Items.Add(item);
         return true;
     }
 
-    public void RemoveItem(IItem item)
+    public void RemoveItem(ItemData item)
     {
 
     }
@@ -64,13 +64,8 @@ public class PlayerInventory : IInventory
 
 public interface IInventory
 {
-    List<IItem> Items { get; }
+    List<ItemData> Items { get; }
     int MaxCount { get; }
-    bool TryAddItem(IItem item);
-    void RemoveItem(IItem item);
-}
-
-public interface IItem
-{
-
+    bool TryAddItem(ItemData item);
+    void RemoveItem(ItemData item);
 }

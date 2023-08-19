@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class InteractableItem : MonoBehaviour, IInteractableObject
 {
-    public IItem Item;
+    public ItemData Item;
 
     public void Interact()
     {
-        Debug.Log(transform.name + "Interact!");
+        if (!GameDataManager.Instance.PlayerInventory.TryAddItem(Item)) return;
+        Destroy(gameObject);
     }
 }
 

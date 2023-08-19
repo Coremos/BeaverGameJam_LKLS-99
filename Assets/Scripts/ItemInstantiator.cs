@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class ItemInstantiator : MonoBehaviour
 {
+    [SerializeField] private InteractableItem itemPrefab;
+    [SerializeField] private Transform itemRoot;
+
     private List<LocationPoint> locationPoints;
 
     private void Awake()
     {
+        locationPoints = new List<LocationPoint>();
         int count = transform.childCount;
         for (int index = 0; index < count; index++)
         {
@@ -16,8 +20,17 @@ public class ItemInstantiator : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        InstantiateItems();
+    }
+
     private void InstantiateItems()
     {
-
+        foreach (var locationPoint in locationPoints)
+        {
+            var itemObject = Instantiate(itemPrefab);
+            itemObject.Item = ItemManager.Instance.ItemTabeDataDic[locationPoint.ItemIndex];
+        }
     }
 }
