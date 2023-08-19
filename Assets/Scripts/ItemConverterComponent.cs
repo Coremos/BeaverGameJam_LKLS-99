@@ -91,7 +91,7 @@ public class ItemConverterComponent : MonoBehaviour
 
     public void OnClickConvertButton()
     {
-
+        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Title);
     }
 
 }

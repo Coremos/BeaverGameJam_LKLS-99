@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using DG.Tweening.Plugins;
-using System.ComponentModel;
 
 public class UITouchController : MonoBehaviour
 {
@@ -21,7 +19,7 @@ public class UITouchController : MonoBehaviour
 
     private void Awake()
     {
-        //PointerEventData = new PointerEventData(null);
+        PointerEventData = new PointerEventData(null);
     }
 
     // Update is called once per frame
