@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, IMovementController
     private float cooldownTimer;
     private bool isMoving;
     private bool isCurrentMoving;
+    private SpriteRenderer spriteRenderer;
 
     [SerializeField] private float dashPower;
     [SerializeField] private float speed;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour, IMovementController
         TryGetComponent(out interactor);
         TryGetComponent(out rigid);
         TryGetComponent(out animator);
+        transform.GetChild(0).TryGetComponent(out spriteRenderer);
     }
 
     public void Move(Vector3 movement)
@@ -27,6 +29,9 @@ public class PlayerController : MonoBehaviour, IMovementController
         direction = movement;
         transform.position += movement * speed * Time.deltaTime;
         isCurrentMoving = true;
+
+        float cross = Vector3.Cross(direction, Vector3.up).z;
+        if (cross != 0.0f) spriteRenderer.flipX = cross < 0.0f;
     }
 
     public void Dash()
