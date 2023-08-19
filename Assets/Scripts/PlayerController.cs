@@ -5,8 +5,10 @@ public class PlayerController : MonoBehaviour, IMovementController
     private Vector3 direction;
     private PlayerInteractor interactor;
     private Rigidbody2D rigid;
+    private Animator animator;
     private float cooldownTimer;
-    private Vector3 dashValue;
+    private bool isMoving;
+    private bool isCurrentMoving;
 
     [SerializeField] private float dashPower;
     [SerializeField] private float speed;
@@ -16,12 +18,14 @@ public class PlayerController : MonoBehaviour, IMovementController
     {
         TryGetComponent(out interactor);
         TryGetComponent(out rigid);
+        TryGetComponent(out animator);
     }
 
     public void Move(Vector3 movement)
     {
         direction = movement;
         transform.position += movement * speed * Time.deltaTime;
+        isCurrentMoving = true;
     }
 
     public void Dash()
@@ -29,14 +33,34 @@ public class PlayerController : MonoBehaviour, IMovementController
         if (cooldownTimer > 0) return;
         Debug.Log("Dash!");
         cooldownTimer = dashCooldown;
-        dashValue = direction * dashPower;
+        rigid.AddForce(direction * dashPower, ForceMode2D.Impulse);
     }
 
     private void Update()
     {
-        transform.position += dashValue;
-        dashValue *= 0.5f;
+        if (cooldownTimer <= 0.0f) return;
         cooldownTimer -= Time.deltaTime;
+    }
+
+    private void LateUpdate()
+    {
+        if (isCurrentMoving)
+        {
+            if (!isMoving)
+            {
+                isMoving = true;
+                animator.Play("Run");
+            }
+        }
+        else
+        {
+            if (isMoving)
+            {
+                isMoving = false;
+                animator.Play("Idle");
+            }
+        }
+        isCurrentMoving = false;
     }
 
     public void Interact()
