@@ -23,6 +23,7 @@ public class SubmitManager : Singleton<SubmitManager>
     public void Init()
     {
         PrevSubmit.Clear();
+        PrevResult.Clear();
     }
 
     public bool CanSubmit()
