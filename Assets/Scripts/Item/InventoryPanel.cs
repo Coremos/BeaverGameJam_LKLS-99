@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class InventoryPanel : MonoBehaviour
 {
     public ScrollRect ScrollRect;
-    public InventoryItemComponent InventoryItemComponent;
+    public ItemComponent ItemComponent;
 
-    private List<InventoryItemComponent> _inventoryItemComponentList = new List<InventoryItemComponent>();
+    private List<ItemComponent> _inventoryItemComponentList = new List<ItemComponent>();
 
     private void Awake()
     {
@@ -38,21 +38,30 @@ public class InventoryPanel : MonoBehaviour
             return;
         }
 
-        foreach (var itemData in itemDataList)
+        for (int i = 0; i < itemDataList.Count; i++)
         {
-            if (itemData == null)
+            if (itemDataList[i] == null)
             {
                 continue;
             }
 
-            var compo = Instantiate(InventoryItemComponent, ScrollRect.content);
-            if (compo == null)
+            if (i >= _inventoryItemComponentList.Count)
             {
-                return;
+                var compo = Instantiate(ItemComponent, ScrollRect.content);
+                if (compo == null)
+                {
+                    return;
+                }
+
+                _inventoryItemComponentList.Add(compo);
             }
 
-            compo.ItemCountText.text = itemData.Count.ToString();
-            compo.ItemData = itemData;
+            _inventoryItemComponentList[i].ItemCountText.text = itemDataList[i].Count.ToString();
+            _inventoryItemComponentList[i].ItemData = itemDataList[i];
+            _inventoryItemComponentList[i].NowItemType = ItemComponent.ItemType.Inventory;
+            _inventoryItemComponentList[i].gameObject.SetActive(true);
+
+
         }
     }
 }

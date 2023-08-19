@@ -17,7 +17,7 @@ public class UITouchController : MonoBehaviour
 
     private bool _isDrag = false;
     private ItemData _itemData = null;
-    private InventoryItemComponent _targetComponent = null;
+    private ItemComponent _targetComponent = null;
 
 
     private void Awake()
@@ -57,14 +57,21 @@ public class UITouchController : MonoBehaviour
 
         for (int i = 0; i < raycastResults.Count; i++)
         {
-            var component = raycastResults[i].gameObject.GetComponent<InventoryItemComponent>();
-            if (component != null)
+            var component = raycastResults[i].gameObject.GetComponent<ItemComponent>();
+            if (component == null)
             {
-                _targetComponent = component;
-                _isDrag = true;
-                MoveTargetObject.SetActive(true);
-                return;
+                continue;
             }
+
+            if (component.isMoveableType() == false)
+            {
+                continue;
+            }
+
+            _targetComponent = component;
+            _isDrag = true;
+            MoveTargetObject.SetActive(true);
+            return;
         }
     }
 
