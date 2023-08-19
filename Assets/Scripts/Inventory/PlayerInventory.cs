@@ -21,4 +21,9 @@ public class PlayerInventory : IInventory
     {
         Items.Remove(item);
     }
+
+    public void ClearItems()
+    {
+        Items.Clear();
+    }
 }

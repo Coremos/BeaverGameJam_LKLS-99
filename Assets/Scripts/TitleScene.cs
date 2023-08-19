@@ -7,6 +7,8 @@ public class TitleScene : MonoBehaviour
     public void LoadCheckScene()
     {
         GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Check);
+        GameDataManager.Instance.GlobalInventory.ClearItems();
+        GameDataManager.Instance.PlayerInventory.ClearItems();
         ItemManager.Instance.Init();
         SubmitManager.Instance.Init();
         spriteBinder.Bind(ItemManager.Instance.ItemTabeDataDic);
