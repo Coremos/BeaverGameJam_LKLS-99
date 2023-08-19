@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public Dictionary <int, ItemData> ItemDatadic =  new Dictionary <int, ItemData> ();
+    public Dictionary <int, ItemData> ItemTabeDataDic =  new Dictionary <int, ItemData> ();
     
     private void Awake()
     {
@@ -47,9 +47,9 @@ public class ItemManager : Singleton<ItemManager>
                 newItemData.Answer = (string)data["Answer"];
                 newItemData.Description = (string)data["Description"];
 
-                if (ItemDatadic.ContainsKey(newItemData.Index) == false)
+                if (ItemTabeDataDic.ContainsKey(newItemData.Index) == false)
                 {
-                    ItemDatadic.Add(newItemData.Index, newItemData);
+                    ItemTabeDataDic.Add(newItemData.Index, newItemData);
                 }
             }
         }
@@ -58,4 +58,6 @@ public class ItemManager : Singleton<ItemManager>
             UnityEngine.Debug.LogError(e.Message);
         }
     }
+
+    
 }
