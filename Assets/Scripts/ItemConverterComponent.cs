@@ -12,6 +12,7 @@ public class ItemConverterComponent : ItemBox
     public GameObject InfoPanel;
     public Text NameText;
     public Text DiscriptionText;
+    public GameObject Effect;
 
     [SerializeField]
     public ItemConverterData ItemConverterData;
@@ -19,6 +20,7 @@ public class ItemConverterComponent : ItemBox
     private void Awake()
     {
         SetItemConverterData();
+        Effect.gameObject.SetActive(false);
     }
 
     public void SetItemConverterData()
@@ -54,6 +56,7 @@ public class ItemConverterComponent : ItemBox
 
     public void ConvertAll()
     {
+        Effect.SetActive(false);
         foreach (var compo in GetItemComponentList())
         {
             if (compo == null)
@@ -72,6 +75,8 @@ public class ItemConverterComponent : ItemBox
 
             compo.transform.parent = OutputScrollRect.content;
         }
+
+        Effect.SetActive(true);
     }
 
 }
