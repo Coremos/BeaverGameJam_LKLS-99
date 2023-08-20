@@ -9,8 +9,12 @@ public class ItemConverterComponent : ItemBox
     public ScrollRect OutputScrollRect;
     public Button ConvertButton;
 
+    public GameObject InfoPanel;
+    public Text NameText;
+    public Text DiscriptionText;
+
     [SerializeField]
-    private ItemConverterData _itemConverterData;
+    public ItemConverterData ItemConverterData;
 
     private void Awake()
     {
@@ -24,7 +28,7 @@ public class ItemConverterComponent : ItemBox
 
     public void OnClickConvertButton()
     {
-        if (_itemConverterData == null)
+        if (ItemConverterData == null)
         {
             return;
         }
@@ -63,7 +67,7 @@ public class ItemConverterComponent : ItemBox
             }
 
             compo.IsConverted = true;
-            compo.ConverterName = _itemConverterData.ConverterName;
+            compo.ConverterName = ItemConverterData.ConverterName;
             compo.NowItemType = ItemComponent.ItemType.ConverterOutput;
 
             compo.transform.parent = OutputScrollRect.content;
