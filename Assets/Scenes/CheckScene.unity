@@ -3270,6 +3270,10 @@ PrefabInstance:
       propertyPath: interactableObjectIndicator
       value: 
       objectReference: {fileID: 545510670}
+    - target: {fileID: 696587787, guid: 466988f519d41a14bb64cba3353fb790, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9141152301230919777, guid: 466988f519d41a14bb64cba3353fb790, type: 3}
       propertyPath: m_Name
       value: Player
