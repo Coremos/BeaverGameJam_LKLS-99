@@ -23,6 +23,9 @@ public class ItemComponent : MonoBehaviour
     public bool IsConverted { get; set; } = false;
     public string ConverterName = "";
 
+    public Sprite DustSprite;
+    public Sprite[] JewlySprties;
+
     public bool isMoveableType()
     {
         switch (NowItemType)
@@ -33,6 +36,18 @@ public class ItemComponent : MonoBehaviour
                 return true;
             default:
                 return false;
+        }
+    }
+
+    public Sprite GetConvertSprite()
+    {
+        if (ItemData.IsAnswer && ItemData.NeedConvert && string.Compare(ConverterName, ItemData.Answer) != 0 )
+        {
+            return JewlySprties[0];
+        }
+        else
+        {
+            return DustSprite;
         }
     }
 

@@ -50,7 +50,7 @@ public class ConverterPanel : MonoBehaviour
                 continue;
             }
 
-            compo.InfoPanel.gameObject.SetActive(true);
+            //compo.InfoPanel.gameObject.SetActive(true);
             compo.NameText.text = converterName;
             compo.DiscriptionText.text = discription;
             break;
