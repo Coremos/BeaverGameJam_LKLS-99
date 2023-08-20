@@ -121,4 +121,5 @@ public class SubmitManager : Singleton<SubmitManager>
 
         PrevResult.Add(key, $"{strike} / {ball} / {fail}");
     }
+
 }

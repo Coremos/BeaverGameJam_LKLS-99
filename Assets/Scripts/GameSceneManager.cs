@@ -6,7 +6,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
         Check,
         Making,
         Ending,
-        Ending01
+        Ending01,
+        Happy,
     }
 
     private void Awake()
@@ -32,6 +33,9 @@ public class GameSceneManager : Singleton<GameSceneManager>
                 break;
             case SceneType.Ending01:
                 UnityEngine.SceneManagement.SceneManager.LoadScene("EndingScene01");
+                break;
+            case SceneType.Happy:
+                UnityEngine.SceneManagement.SceneManager.LoadScene("HappyEnding");
                 break;
         }
     }

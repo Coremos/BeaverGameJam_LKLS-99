@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class EndingScene : MonoBehaviour
 {
+    public Transform content;
+
     public void OnClickRetry()
     {
         if (SubmitManager.Instance.IsClear)
         {
-            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Title);
+            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Happy);
             return;
         }
 
