@@ -55,4 +55,9 @@ public class InventoryPanel : MonoBehaviour
             _inventoryItemComponentList[i].ItemImage.sprite = itemDataList[i].Sprite;
         }
     }
+
+    public void OnClickTestButton()
+    {
+        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Happy);
+    }
 }
