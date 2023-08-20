@@ -41,7 +41,7 @@ public class ItemComponent : MonoBehaviour
 
     public Sprite GetConvertSprite()
     {
-        if (ItemData.IsAnswer && ItemData.NeedConvert && string.Compare(ConverterName, ItemData.Answer) != 0 )
+        if (ItemData.IsAnswer && ItemData.NeedConvert && string.Compare(ConverterName, ItemData.Answer) == 0 )
         {
             return JewlySprties[0];
         }
