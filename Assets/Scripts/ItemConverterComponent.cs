@@ -72,6 +72,7 @@ public class ItemConverterComponent : ItemBox
             compo.IsConverted = true;
             compo.ConverterName = ItemConverterData.ConverterName;
             compo.NowItemType = ItemComponent.ItemType.ConverterOutput;
+            compo.ItemImage.sprite = compo.GetConvertSprite();
 
             compo.transform.parent = OutputScrollRect.content;
         }

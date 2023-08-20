@@ -95,6 +95,14 @@ MonoBehaviour:
   ItemImage: {fileID: 6068759493589935914}
   ItemCountText: {fileID: 7382438004741632561}
   ConverterName: 
+  DustSprite: {fileID: 21300000, guid: a1ed0f569da32c74782bc33565fbb137, type: 3}
+  JewlySprties:
+  - {fileID: 21300000, guid: b51139a8727a1c843aaebda3062a5d0f, type: 3}
+  - {fileID: 21300000, guid: 9a2e45afed50de945b736a9c88afb95b, type: 3}
+  - {fileID: 21300000, guid: 1c098b141104bc54195bea18d7bd73a0, type: 3}
+  - {fileID: 21300000, guid: 717618bcbc8157748972892205537ab6, type: 3}
+  - {fileID: 21300000, guid: 965eb5c4b3883c345a763c89a8f7de0f, type: 3}
+  - {fileID: 21300000, guid: d241435c43501014fb1becc0ca329cda, type: 3}
 --- !u!61 &1658824040746491757
 BoxCollider2D:
   m_ObjectHideFlags: 0
