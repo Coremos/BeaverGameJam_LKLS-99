@@ -19,11 +19,13 @@ public class SubmitManager : Singleton<SubmitManager>
     public Dictionary<int, List<int>> PrevSubmit = new Dictionary<int, List<int>>();
     public Dictionary<int, string> PrevResult = new Dictionary<int, string>();
     private int _nowSubmitCount = 0;
+    public bool IsClear = false;
 
     public void Init()
     {
         PrevSubmit.Clear();
         PrevResult.Clear();
+        IsClear = false;
     }
 
     public bool CanSubmit()
@@ -110,6 +112,11 @@ public class SubmitManager : Singleton<SubmitManager>
                     fail++;
                     break;
             }
+        }
+
+        if (strike >= 9)
+        {
+            IsClear = true;
         }
 
         PrevResult.Add(key, $"{strike} / {ball} / {fail}");

@@ -6,14 +6,20 @@ public class EndingScene : MonoBehaviour
 {
     public void OnClickRetry()
     {
-        var sceneType = GameSceneManager.SceneType.Title;
+        if (SubmitManager.Instance.IsClear)
+        {
+            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Title);
+            return;
+        }
 
         if (SubmitManager.Instance.CanSubmit())
         {
-            sceneType = GameSceneManager.SceneType.Making;
+            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Making);
         }
-
-        GameSceneManager.Instance.LoadScene(sceneType);
+        else
+        {
+            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Ending01);
+        }
 
     }
 }
