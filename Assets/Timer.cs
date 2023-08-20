@@ -27,6 +27,6 @@ public class Timer : MonoBehaviour
 
     private void OnEndTimer()
     {
-
+        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Ending01);
     }
 }

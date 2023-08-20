@@ -18,4 +18,9 @@ public class TextIndicator : MonoBehaviour
         }
         yield return null;
     }
+
+    public void GoBack()
+    {
+        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneType.Title);
+    }
 }
