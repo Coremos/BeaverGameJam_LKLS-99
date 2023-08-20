@@ -3,24 +3,23 @@ Index,Location,Type,Name,IsAnswer,NeedConvert,Answer,Description
 2,제1연구실,Item,납,TRUE,TRUE,모루,"납은 수천 년에 걸쳐 사용되었는데, 그 이유는 널리 퍼져있고 쉽게 추출하여 작업할 수 있기 때문이다. 가공 한다면 놀라운 일이 발생할지도?"
 3,제1연구실,Item,진공 청소기,FALSE,FALSE,x,엄청난 기세로 먼지를 흡수하는 청소기이다. 가끔 화학약품들이 빨려들어간다.
 4,제2연구실,Item,살균 가스통,FALSE,FALSE,x,ㅇ
-5,제2연구실,Item,깔때기,TRUE,TRUE,절구통,ㅇ
-6,제2연구실,Item,고무오리,FALSE,FALSE,x,ㅇ
+5,제2연구실,Item,깔때기,TRUE,TRUE,절구통,윗부분은 넓고 아랫부분은 좁은 도구. 빻는다면 때깔이 좋아질 수도?
+6,제2연구실,Item,고무오리,FALSE,FALSE,x,누르면 꽥꽥 소리가 나는 고무 재질의 오리 인형.
 7,화학 실험실,Converter,맷돌,FALSE,FALSE,x,ㅇ
-7,화학 실험실,Item,인화 구리,TRUE,FALSE,정답,ㅇ
-8,화학 실험실,Item,비커,FALSE,FALSE,x,ㅇ
-9,멸균 세척실,Item,붕대,FALSE,FALSE,x,ㅇ
-10,멸균 세척실,Item,알코올,FALSE,FALSE,x,ㅇㅇ
+8,화학 실험실,Item,인화 구리,TRUE,FALSE,정답,ㅇ
+9,화학 실험실,Item,비커,FALSE,FALSE,x,액체 등을 담기 위한 용기.
+10,멸균 세척실,Item,붕대,FALSE,FALSE,x,ㅇ
 11,멸균 세척실,Item,양초,TRUE,TRUE,맷돌,ㅇ
 12,멸균 세척실,Item,타이레놀,FALSE,FALSE,x,ㅇ
 13,위험물 저장소,Item,폭탄,FALSE,FALSE,x,ㅇ
 14,위험물 저장소,Item,핵무기,FALSE,FALSE,x,ㅇ
 15,위험물 저장소,Item,전차 모형,TRUE,TRUE,모루,ㅇ
 16,환상재료 양자역학 합성실,Converter,모루,FALSE,FALSE,x,ㅇ
-17,환상재료 양자역학 합성실,Item,맨드레이크 씨앗,FALSE,FALSE,x,ㅇ
+17,환상재료 양자역학 합성실,Item,맨드레이크,TRUE,TRUE,맷돌,ㅇ
 18,환상재료 양자역학 합성실,Item,슬라임 용액,FALSE,FALSE,x,ㅇ
 19,화장실,Item,거울,TRUE,TRUE,절구통,ㅇ
 20,화장실,Item,치약,FALSE,FALSE,x,ㅇ
 21,화장실,Item,암모니아,FALSE,FALSE,x,ㅇ
 22,실내 재배실,Item,LK-999비료,FALSE,FALSE,x,ㅇㅇ
-23,실내 재배실,Item,맨드레이크,TRUE,TRUE,맷돌,ㅇ
+23,실내 재배실,Item,알코올,FALSE,FALSE,x,ㅇㅇ
 24,실내 재배실,Converter,절구통,FALSE,FALSE,x,ㅇ
