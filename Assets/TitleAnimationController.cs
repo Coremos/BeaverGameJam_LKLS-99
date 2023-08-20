@@ -15,7 +15,11 @@ public class TitleAnimationController : MonoBehaviour
 
     public void Play()
     {
-        if (queue.Count <= 0) animator.Play("TitleHide"); 
+        if (queue.Count <= 0)
+        {
+            animator.Play("TitleHide");
+            return;
+        }
         text.text = queue.Dequeue();
         animator.Play("TitleShow");
     }
