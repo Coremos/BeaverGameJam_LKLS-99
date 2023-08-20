@@ -12,7 +12,7 @@ public class SubmitManager : Singleton<SubmitManager>
         Fail
     }
 
-    private List<int> _answerItemIndexList = new List<int>() { 12, 8, 16, 20, 2, 5, 8, 12, 24 };
+    private List<int> _answerItemIndexList = new List<int>() { 11, 8, 15, 19, 2, 5, 8, 11, 17 };
 
     private readonly int _maxItemCount = 9;
     private readonly int _maxSubmitCount = 3;
