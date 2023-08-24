@@ -133,7 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 123468358}
   - component: {fileID: 123468357}
-  - component: {fileID: 123468359}
   m_Layer: 0
   m_Name: TitleManager
   m_TagString: Untagged
@@ -153,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e1ecb9ecae4524ca2fb081812f153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteBinder: {fileID: 123468359}
 --- !u!4 &123468358
 Transform:
   m_ObjectHideFlags: 0
@@ -167,45 +165,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &123468359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 123468356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10233cd91e140bb4db01c5e8d7850acb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: 126f7fded5321d74daffd22b6eaa875e, type: 3}
-  - {fileID: 21300000, guid: cd77db6e20b594a43bf299cc15337808, type: 3}
-  - {fileID: 21300000, guid: 4eea4221889bb6448ad3d0577d79fc40, type: 3}
-  - {fileID: 21300000, guid: 6f0185821ddd2df4494fa35830b3677a, type: 3}
-  - {fileID: 21300000, guid: 878151f922a78a5428585c5475e8ee11, type: 3}
-  - {fileID: 21300000, guid: 807cc85c4803ffe43b3061630977d222, type: 3}
-  - {fileID: 21300000, guid: 683f5b7cb41c8d64c9ca8c13c0544080, type: 3}
-  - {fileID: 21300000, guid: 09b02e4f3e6220e4da2a04a46782306e, type: 3}
-  - {fileID: 21300000, guid: 79538352e2a473c489e6195fa491de68, type: 3}
-  - {fileID: 21300000, guid: 5d9c34e9286b6354488fa7fcd9e679fa, type: 3}
-  - {fileID: 21300000, guid: 3a0eb5485de66a54380ec607cf7a661c, type: 3}
-  - {fileID: 21300000, guid: 511d4d42aabff2847a011a676d1c2a8c, type: 3}
-  - {fileID: 21300000, guid: 8f19cf9308a35ec4d87a5caae83d324f, type: 3}
-  - {fileID: 21300000, guid: 7cc3657b203cbb3499ce5251b3a0ed0a, type: 3}
-  - {fileID: 21300000, guid: 6a9915f5fb68cd64190ca15b0520ba88, type: 3}
-  - {fileID: 21300000, guid: 3e174dbf3465bb94aa61b59e66fdefc6, type: 3}
-  - {fileID: 21300000, guid: b9f0b9ab64840ec4ca59088dac6ebfc8, type: 3}
-  - {fileID: 21300000, guid: 394117499bf14c244ad74c7bfb5c8679, type: 3}
-  - {fileID: 21300000, guid: 6047f0bcc63b95c4596ae963d9ecbb39, type: 3}
-  - {fileID: 21300000, guid: a3ca0a7929b2b274abc48fb8b7971e00, type: 3}
-  - {fileID: 21300000, guid: 6261b249d3f513645ad6a4fd1e29e07d, type: 3}
-  - {fileID: 21300000, guid: cb054a70bf2b66c4aab99b5c9768f46d, type: 3}
-  - {fileID: 21300000, guid: 5ef8c11a55b689142abe716a40f5dee9, type: 3}
-  - {fileID: 21300000, guid: 6613411c848460f40a8faf9e2f468c7e, type: 3}
 --- !u!1 &565129552
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1131,7 @@ RectTransform:
   - {fileID: 1282489381}
   - {fileID: 855865973}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1520,7 +1481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1900546461
 GameObject:
@@ -1534,7 +1495,7 @@ GameObject:
   - component: {fileID: 1900546463}
   - component: {fileID: 1900546462}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1656,12 +1617,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1900546461}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045173793
 GameObject:
@@ -1916,7 +1877,7 @@ Transform:
   - {fileID: 643600355}
   - {fileID: 1516316236}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2138604716
 Animator:

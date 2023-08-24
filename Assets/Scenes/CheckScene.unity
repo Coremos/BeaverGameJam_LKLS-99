@@ -6380,6 +6380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb125d1a44152c4389de7ff2e5636a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteBinder: {fileID: 2310661653009609670, guid: 50716d77ad580844e81395eaab878b1b, type: 3}
   timer: {fileID: 890904241}
   titleAnimationController: {fileID: 2048780119}
 --- !u!4 &2105477395
