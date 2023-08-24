@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InteractableItem : MonoBehaviour, IInteractableObject
 {
+    public string Name => item.Name;
     public ItemData Item 
     {
         get => item;
@@ -28,5 +29,6 @@ public class InteractableItem : MonoBehaviour, IInteractableObject
 
 public interface IInteractableObject
 {
+    string Name { get; }
     void Interact();
 }

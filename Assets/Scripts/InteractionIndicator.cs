@@ -50,7 +50,8 @@ public class InteractionIndicator : MonoBehaviour
             isActivated = true;
             indicator.transform.position = Camera.main.WorldToScreenPoint(target.position);
         }
-        target.TryGetComponent(out indicator.InteractableObject);
+        target.TryGetComponent<IInteractableObject>(out var interactableObject);
+        indicator.InteractableObject = interactableObject;
         indicator.SetActive(true);
     }
 
