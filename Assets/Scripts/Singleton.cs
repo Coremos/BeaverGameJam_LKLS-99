@@ -15,7 +15,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 if (instance == null)
                 {
                     GameObject obj = new GameObject(typeof(T).Name, typeof(T));
-                    instance = obj.GetComponent<T>();
+                    obj.TryGetComponent(out instance);
                 }
             }
             return instance;
@@ -24,13 +24,21 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private void Awake()
     {
-        if (transform.parent != null && transform.root != null)
+        if (instance == null)
         {
-            DontDestroyOnLoad(transform.root.gameObject);
+            instance = this as T;
+            if (transform.parent != null && transform.root != null)
+            {
+                DontDestroyOnLoad(transform.root.gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(gameObject);
+            }
         }
         else
         {
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
         }
     }
 }
