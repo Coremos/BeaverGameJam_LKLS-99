@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,14 +14,17 @@ public class TitleAnimationController : MonoBehaviour
         queue.Enqueue(value);
     }
 
-    public void Play()
+    public void PlayFirst()
     {
-        if (queue.Count <= 0)
-        {
-            animator.Play("TitleHide");
-            return;
-        }
         text.text = queue.Dequeue();
         animator.Play("TitleShow");
+    }
+
+    public void Play()
+    {
+        if (queue.Count <= 0) return;
+
+        text.text = queue.Dequeue();
+        animator.PlayInFixedTime("TitleShow", 0, 0.5f);
     }
 }
